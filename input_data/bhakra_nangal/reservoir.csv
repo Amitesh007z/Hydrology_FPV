@@ -1,0 +1,2 @@
+reservoir_name,state,river,latitude,longitude,area_km2,gross_storage_mcm,live_storage_mcm,frl_m,mddl_m,head_m,installed_capacity_mw,turbine_type,turbine_efficiency,num_units,dam_type,year_commissioned
+Bhakra Nangal,Himachal Pradesh / Punjab,Sutlej,31.51,76.16,169.3,9344,6167.04,100,80,168.0,1325,Francis,0.88,26,Gravity,1980

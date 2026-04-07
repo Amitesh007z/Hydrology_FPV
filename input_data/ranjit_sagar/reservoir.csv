@@ -1,0 +1,2 @@
+reservoir_name,state,river,latitude,longitude,area_km2,gross_storage_mcm,live_storage_mcm,frl_m,mddl_m,head_m,installed_capacity_mw,turbine_type,turbine_efficiency,num_units,dam_type,year_commissioned
+Ranjit Sagar,Punjab / Himachal,Ravi,32.27,75.37,39.0,1897,1252.02,100,80,95.0,600,Francis,0.88,12,Gravity,1980

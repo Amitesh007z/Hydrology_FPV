@@ -1,0 +1,2 @@
+reservoir_name,state,river,latitude,longitude,area_km2,gross_storage_mcm,live_storage_mcm,frl_m,mddl_m,head_m,installed_capacity_mw,turbine_type,turbine_efficiency,num_units,dam_type,year_commissioned
+Ukai,Gujarat,Tapti,21.25,72.83,430.0,7734,5104.4400000000005,100,80,61.0,240,Francis,0.88,4,Gravity,1980

@@ -1,0 +1,2 @@
+reservoir_name,state,river,latitude,longitude,area_km2,gross_storage_mcm,live_storage_mcm,frl_m,mddl_m,head_m,installed_capacity_mw,turbine_type,turbine_efficiency,num_units,dam_type,year_commissioned
+Gandak,Bihar / Uttar Pradesh,Gandak,26.33,84.95,63.0,870,574.2,100,80,37.0,75,Francis,0.88,1,Gravity,1980

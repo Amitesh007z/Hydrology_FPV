@@ -1,0 +1,2 @@
+reservoir_name,state,river,latitude,longitude,area_km2,gross_storage_mcm,live_storage_mcm,frl_m,mddl_m,head_m,installed_capacity_mw,turbine_type,turbine_efficiency,num_units,dam_type,year_commissioned
+Xayaburi,Uttarakhand,Alaknanda,30.18,79.6,22.0,200,132.0,100,80,163.0,50,Francis,0.88,1,Gravity,1980

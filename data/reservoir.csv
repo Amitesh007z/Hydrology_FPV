@@ -1,0 +1,6 @@
+reservoir_name,area_km2,storage_capacity_mcm,head_m,installed_capacity_mw,turbine_efficiency,min_water_level,max_water_level
+Bhaira Reservoir,45.0,450.0,28.5,85.0,0.85,105.0,125.0
+Rana Pratap Sagar,89.5,1156.0,32.0,115.0,0.86,262.0,345.0
+Indira Sagar,245.0,1450.0,58.0,1000.0,0.87,165.0,262.0
+Koyna Reservoir,56.8,1259.0,48.0,1960.0,0.85,440.0,560.0
+Krishnarajsagar,27.5,256.0,12.0,44.0,0.83,850.0,862.0

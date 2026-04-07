@@ -1,0 +1,2 @@
+reservoir_name,state,river,latitude,longitude,area_km2,gross_storage_mcm,live_storage_mcm,frl_m,mddl_m,head_m,installed_capacity_mw,turbine_type,turbine_efficiency,num_units,dam_type,year_commissioned
+Srisailam,Andhra Pradesh / Telangana,Krishna,15.85,78.87,616.0,8722,5756.52,100,80,91.44,1670,Francis,0.88,33,Gravity,1980

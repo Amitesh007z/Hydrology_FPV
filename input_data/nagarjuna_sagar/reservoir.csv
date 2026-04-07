@@ -1,0 +1,2 @@
+reservoir_name,state,river,latitude,longitude,area_km2,gross_storage_mcm,live_storage_mcm,frl_m,mddl_m,head_m,installed_capacity_mw,turbine_type,turbine_efficiency,num_units,dam_type,year_commissioned
+Nagarjuna Sagar,Andhra Pradesh / Telangana,Krishna,17.45,79.1,333.0,7254,4787.64,100,80,71.6,815,Francis,0.88,16,Gravity,1980

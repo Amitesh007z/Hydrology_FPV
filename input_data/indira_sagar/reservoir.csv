@@ -1,0 +1,2 @@
+reservoir_name,state,river,latitude,longitude,area_km2,gross_storage_mcm,live_storage_mcm,frl_m,mddl_m,head_m,installed_capacity_mw,turbine_type,turbine_efficiency,num_units,dam_type,year_commissioned
+Indira Sagar,Madhya Pradesh,Narmada,22.42,76.58,245.0,1450,957.0,100,80,58.0,1000,Francis,0.88,20,Gravity,1980

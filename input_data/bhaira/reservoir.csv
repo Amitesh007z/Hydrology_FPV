@@ -1,0 +1,2 @@
+reservoir_name,state,river,latitude,longitude,area_km2,gross_storage_mcm,live_storage_mcm,frl_m,mddl_m,head_m,installed_capacity_mw,turbine_type,turbine_efficiency,num_units,dam_type,year_commissioned
+Bhaira,Madhya Pradesh,Chambal,24.65,76.2,45.0,450,297.0,100,80,28.5,85,Francis,0.88,1,Gravity,1980

@@ -1,0 +1,2 @@
+reservoir_name,state,river,latitude,longitude,area_km2,gross_storage_mcm,live_storage_mcm,frl_m,mddl_m,head_m,installed_capacity_mw,turbine_type,turbine_efficiency,num_units,dam_type,year_commissioned
+Sutlej Yamuna Link,Punjab / Haryana,Sutlej,30.72,75.9,45.0,540,356.40000000000003,100,80,28.0,100,Francis,0.88,2,Gravity,1980

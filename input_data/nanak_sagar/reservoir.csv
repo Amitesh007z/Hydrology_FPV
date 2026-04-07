@@ -1,0 +1,2 @@
+reservoir_name,state,river,latitude,longitude,area_km2,gross_storage_mcm,live_storage_mcm,frl_m,mddl_m,head_m,installed_capacity_mw,turbine_type,turbine_efficiency,num_units,dam_type,year_commissioned
+Nanak Sagar,Punjab,Ravi,32.0,75.18,28.0,297,196.02,100,80,29.0,80,Francis,0.88,1,Gravity,1980

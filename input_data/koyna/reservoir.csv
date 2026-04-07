@@ -1,0 +1,2 @@
+reservoir_name,state,river,latitude,longitude,area_km2,gross_storage_mcm,live_storage_mcm,frl_m,mddl_m,head_m,installed_capacity_mw,turbine_type,turbine_efficiency,num_units,dam_type,year_commissioned
+Koyna,Maharashtra,Koyna,17.35,73.58,56.8,1259,830.94,100,80,48.0,1960,Francis,0.88,39,Gravity,1980

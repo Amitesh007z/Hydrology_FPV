@@ -1,0 +1,2 @@
+reservoir_name,state,river,latitude,longitude,area_km2,gross_storage_mcm,live_storage_mcm,frl_m,mddl_m,head_m,installed_capacity_mw,turbine_type,turbine_efficiency,num_units,dam_type,year_commissioned
+Krishna Sagar,Andhra Pradesh,Krishna,16.13,80.43,41.0,316,208.56,100,80,31.0,130,Francis,0.88,2,Gravity,1980

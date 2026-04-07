@@ -1,0 +1,2 @@
+reservoir_name,state,river,latitude,longitude,area_km2,gross_storage_mcm,live_storage_mcm,frl_m,mddl_m,head_m,installed_capacity_mw,turbine_type,turbine_efficiency,num_units,dam_type,year_commissioned
+Bhavanisagar,Tamil Nadu,Bhavani,11.45,76.85,18.0,68,44.88,100,80,35.0,15,Francis,0.88,1,Gravity,1980

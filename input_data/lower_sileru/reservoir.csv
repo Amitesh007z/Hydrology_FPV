@@ -1,0 +1,2 @@
+reservoir_name,state,river,latitude,longitude,area_km2,gross_storage_mcm,live_storage_mcm,frl_m,mddl_m,head_m,installed_capacity_mw,turbine_type,turbine_efficiency,num_units,dam_type,year_commissioned
+Lower Sileru,Andhra Pradesh,Sileru,18.52,82.38,28.0,243,160.38,100,80,102.0,60,Francis,0.88,1,Gravity,1980

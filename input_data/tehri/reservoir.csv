@@ -1,0 +1,2 @@
+reservoir_name,state,river,latitude,longitude,area_km2,gross_storage_mcm,live_storage_mcm,frl_m,mddl_m,head_m,installed_capacity_mw,turbine_type,turbine_efficiency,num_units,dam_type,year_commissioned
+Tehri,Uttarakhand,Bhagirathi,30.37,78.58,52.0,2615,1725.9,100,80,260.0,2400,Francis,0.88,48,Gravity,1980

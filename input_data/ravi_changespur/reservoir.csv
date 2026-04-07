@@ -1,0 +1,2 @@
+reservoir_name,state,river,latitude,longitude,area_km2,gross_storage_mcm,live_storage_mcm,frl_m,mddl_m,head_m,installed_capacity_mw,turbine_type,turbine_efficiency,num_units,dam_type,year_commissioned
+Ravi Changespur,Punjab,Ravi,31.65,75.75,22.0,385,254.10000000000002,100,80,25.0,40,Francis,0.88,1,Gravity,1980

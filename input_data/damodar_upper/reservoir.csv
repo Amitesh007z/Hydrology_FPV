@@ -1,0 +1,2 @@
+reservoir_name,state,river,latitude,longitude,area_km2,gross_storage_mcm,live_storage_mcm,frl_m,mddl_m,head_m,installed_capacity_mw,turbine_type,turbine_efficiency,num_units,dam_type,year_commissioned
+Damodar (Upper),Jharkhand,Damodar,23.8,84.25,32.0,244,161.04000000000002,100,80,38.0,100,Francis,0.88,2,Gravity,1980

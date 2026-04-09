@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet';
 import axios from 'axios';
-import { MapPin } from 'lucide-react';
 import '../styles/DamMap.css';
 
 const API_BASE = 'http://localhost:8000';
@@ -66,7 +65,7 @@ const DamMap = ({ onSelectDam, selectedDam }) => {
     <div className="dam-map-container">
       <div className="map-header">
         <h1>
-          <MapPin size={24} /> FPV Nexus - Multi-Dam India Map
+         FPV Nexus - Multi-Dam India Map
         </h1>
         <p className="subtitle">
           {filteredDams.length} dams available • Click on a marker to analyze

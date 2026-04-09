@@ -1,13 +1,15 @@
 .dam-map-container {
+  min-height: calc(100vh - 72px);
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
   padding: 20px;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  min-height: 100vh;
 }
 
 .map-header {
   text-align: center;
-  margin-bottom: 30px;
-  color: #2c3e50;
+  margin: 22px 0 18px;
+  color: var(--text);
 }
 
 .map-header h1 {
@@ -15,27 +17,29 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  font-size: 2.2em;
-  margin-bottom: 8px;
-  color: #1a5f7a;
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 8px;
+  color: var(--text);
 }
 
 .subtitle {
-  font-size: 1.1em;
-  color: #555;
+  font-size: 14px;
+  color: var(--muted);
   margin: 0;
 }
 
 .map-controls {
   display: flex;
-  gaps: 20px;
+  gap: 16px;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-  background: white;
-  padding: 15px 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: var(--surface);
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
   flex-wrap: wrap;
 }
 
@@ -43,68 +47,101 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  flex: 1;
+  min-width: 260px;
 }
 
 .capacity-filter label {
-  font-weight: 600;
-  color: #2c3e50;
+  font-weight: 650;
+  color: var(--text);
 }
 
 .capacity-filter select {
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 1em;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 14px;
   cursor: pointer;
-  background: white;
+  background: var(--surface);
+  color: var(--text);
+  outline: none;
+  min-height: 40px;
+  min-width: 220px;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(15, 23, 42, 0.55) 50%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.55) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 16px,
+    calc(100% - 12px) 16px;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 34px;
+}
+
+.capacity-filter select:focus {
+  border-color: rgba(18, 183, 106, 0.45);
+  box-shadow: 0 0 0 4px var(--primary-soft);
 }
 
 .legend {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .legend-item {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.9em;
+  font-size: 12px;
+  color: var(--muted);
+  background: rgba(15, 23, 42, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 10px;
 }
 
 .legend-color {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.05);
 }
 
 .map-wrapper {
   margin-bottom: 30px;
-  background: white;
-  border-radius: 8px;
+  background: var(--surface);
+  border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
 }
 
 .error-message {
-  background: #fff3cd;
-  color: #856404;
-  padding: 12px;
-  border-radius: 4px;
+  background: var(--warning-soft);
+  color: #92400e;
+  padding: 12px 14px;
+  border-radius: 12px;
   margin-bottom: 20px;
-  border-left: 4px solid #ffc107;
+  border: 1px solid rgba(245, 158, 11, 0.25);
 }
 
 .dam-list {
-  background: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: var(--surface);
+  padding: 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
 }
 
 .dam-list h2 {
-  color: #2c3e50;
-  margin-top: 0;
-  margin-bottom: 20px;
+  color: var(--text);
+  margin: 0 0 14px;
+  font-size: 16px;
+  font-weight: 800;
 }
 
 .dam-grid {
@@ -114,24 +151,24 @@
 }
 
 .dam-card {
-  background: #f8f9fa;
-  border: 2px solid #e9ecef;
-  border-radius: 8px;
-  padding: 15px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
 }
 
 .dam-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border-color: #007bff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(18, 183, 106, 0.35);
 }
 
 .dam-card.selected {
-  background: #e7f3ff;
-  border-color: #007bff;
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  background: linear-gradient(180deg, rgba(18, 183, 106, 0.10), rgba(18, 183, 106, 0.03));
+  border-color: rgba(18, 183, 106, 0.45);
+  box-shadow: var(--shadow-md);
 }
 
 .dam-card-header {
@@ -143,23 +180,24 @@
 
 .dam-card-header h3 {
   margin: 0;
-  color: #2c3e50;
-  font-size: 1.1em;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 750;
 }
 
 .capacity-badge {
-  background: #007bff;
-  color: white;
+  background: rgba(15, 23, 42, 0.06);
+  color: var(--text);
   padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 0.85em;
-  font-weight: 600;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
   white-space: nowrap;
 }
 
 .dam-card-info {
-  font-size: 0.9em;
-  color: #555;
+  font-size: 13px;
+  color: var(--muted);
 }
 
 .dam-card-info p {
@@ -167,8 +205,8 @@
 }
 
 .dam-card-info .area {
-  color: #888;
-  font-size: 0.85em;
+  color: var(--muted-2);
+  font-size: 12px;
 }
 
 .loading,
@@ -179,14 +217,14 @@
   justify-content: center;
   min-height: 300px;
   gap: 20px;
-  color: #2c3e50;
+  color: var(--text);
 }
 
 .spinner {
   width: 40px;
   height: 40px;
   border: 4px solid #f3f3f3;
-  border-top: 4px solid #007bff;
+  border-top: 4px solid var(--primary);
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -203,7 +241,7 @@
 
 .dam-popup h3 {
   margin: 0 0 10px 0;
-  color: #2c3e50;
+  color: var(--text);
 }
 
 .dam-popup p {
@@ -212,20 +250,21 @@
 }
 
 .analyze-btn {
-  background: #007bff;
+  background: var(--primary);
   color: white;
   border: none;
   padding: 8px 12px;
-  border-radius: 4px;
+  border-radius: 12px;
   cursor: pointer;
   font-weight: 600;
   margin-top: 10px;
   width: 100%;
-  transition: background 0.3s;
+  transition: background 140ms ease, transform 140ms ease;
 }
 
 .analyze-btn:hover {
-  background: #0056b3;
+  background: var(--primary-700);
+  transform: translateY(-1px);
 }
 
 @media (max-width: 768px) {
@@ -244,6 +283,6 @@
   }
 
   .map-header h1 {
-    font-size: 1.5em;
+    font-size: 18px;
   }
 }

@@ -242,29 +242,40 @@ const DamAnalysis = ({ damName, onBack }) => {
 
           {/* KPI Cards */}
           <div className="kpi-grid">
-            <div className="kpi-card energy">
-              <Zap size={28} />
+            <div className="kpi-card">
+              <div className="kpi-icon">
+                <Zap size={18} />
+              </div>
               <div>
                 <p className="kpi-label">FPV Capacity</p>
                 <p className="kpi-value">{(analysis.fpv_capacity_mwp || 0).toFixed(1)} MWp</p>
               </div>
             </div>
-            <div className="kpi-card energy-alt">
-              <TrendingUp size={28} />
+
+            <div className="kpi-card">
+              <div className="kpi-icon">
+                <TrendingUp size={18} />
+              </div>
               <div>
                 <p className="kpi-label">Annual FPV Energy</p>
                 <p className="kpi-value">{((analysis.annual_fpv_mwh || 0) / 1e6).toFixed(2)} Million MWh</p>
               </div>
             </div>
-            <div className="kpi-card water">
-              <Droplet size={28} />
+
+            <div className="kpi-card">
+              <div className="kpi-icon">
+                <Droplet size={18} />
+              </div>
               <div>
                 <p className="kpi-label">Water Saved</p>
                 <p className="kpi-value">{(analysis.water_saved_million_m3 || 0).toFixed(2)} Million m³</p>
               </div>
             </div>
-            <div className="kpi-card sustainable">
-              <Leaf size={28} />
+
+            <div className="kpi-card">
+              <div className="kpi-icon">
+                <Leaf size={18} />
+              </div>
               <div>
                 <p className="kpi-label">CO₂ Avoided</p>
                 <p className="kpi-value">{((analysis.co2_avoided_tonnes || 0) / 1e6).toFixed(2)} Million tonnes</p>
@@ -307,11 +318,14 @@ const DamAnalysis = ({ damName, onBack }) => {
           {analysis.summary && (
             <div className="summary-section">
               <h3>Summary</h3>
-              <pre className="summary-text">
-                {Object.entries(analysis.summary || {})
-                  .map(([key, value]) => `${key}: ${value}`)
-                  .join('\n')}
-              </pre>
+              <div className="summary-grid">
+                {Object.entries(analysis.summary || {}).map(([key, value]) => (
+                  <div key={key} className="summary-item">
+                    <div className="summary-key">{key}</div>
+                    <div className="summary-value">{String(value)}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </div>

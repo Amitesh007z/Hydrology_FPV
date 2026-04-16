@@ -179,7 +179,7 @@ CF = Annual_Energy (MWh) / (Installed_Capacity (MW) × 8760)
 #### D. Revenue
 
 ```
-Revenue (₹ Crores) = E_hydro (MWh) × Tariff (₹/MWh) / 10⁷
+Revenue (₹ Crores) = E_hydro (MWh) × Tariff (₹/kWh) × 1000 / 10⁷
 ```
 
 ---

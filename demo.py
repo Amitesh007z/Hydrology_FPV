@@ -228,7 +228,7 @@ emission_factor = 0.82
 co2_result = compute_total_co2_avoided(annual_fpv_mwh, extra_hydro_mwh_annual, emission_factor)
 
 print(f"   Total Energy (FPV + Hydro): {total_energy_mwh:,.0f} MWh/year")
-print(f"   Grid Emission Factor: {emission_factor} kg CO2/MWh (India)")
+print(f"   Grid Emission Factor: {emission_factor} kg CO2/kWh (India)")
 print(f"   CO2 Avoided: {co2_result['total_tonnes']:,.0f} tonnes/year")
 print(f"   - From FPV: {co2_result['fpv_tonnes']:,.0f} tonnes")
 print(f"   - From Extra Hydro: {co2_result['hydro_tonnes']:,.0f} tonnes")
@@ -247,7 +247,7 @@ print("-" * 80)
 hydro_tariff = 4.5
 hydro_revenue_crore = compute_revenue_from_hydro(extra_hydro_mwh_annual, hydro_tariff)
 print(f"   Annual Hydro Revenue: Rs.{hydro_revenue_crore:.2f} Crores")
-print(f"   (at Rs.{hydro_tariff}/MWh tariff)")
+print(f"   (at Rs.{hydro_tariff}/kWh tariff)")
 
 
 # ============================================================================

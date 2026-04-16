@@ -194,12 +194,12 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("### 💰 Economic Parameters")
 
 emission_factor = st.sidebar.slider(
-    "Grid Emission Factor (kg CO₂/MWh)",
+    "Grid Emission Factor (kg CO₂/kWh)",
     0.5, 1.2, 0.82, step=0.01
 )
 
 hydro_tariff = st.sidebar.slider(
-    "Hydro Tariff (₹/MWh)",
+    "Hydro Tariff (₹/kWh)",
     2.0, 6.0, 4.5, step=0.1
 )
 
@@ -211,7 +211,7 @@ capex_cr_per_mwp = st.sidebar.slider(
     "CAPEX (₹ Cr/MWp)", 3.0, 6.0, 4.0, step=0.5
 )
 fpv_tariff = st.sidebar.slider(
-    "FPV Tariff (₹/MWh)", 2.0, 5.0, 3.5, step=0.1
+    "FPV Tariff (₹/kWh)", 2.0, 5.0, 3.5, step=0.1
 )
 discount_rate = st.sidebar.slider(
     "Discount Rate (%)", 6, 15, 10

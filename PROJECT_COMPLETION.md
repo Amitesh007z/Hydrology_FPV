@@ -86,7 +86,8 @@ Energy = Volume × Head × Gravity × Efficiency / 3.6e9
 
 **Formula:**
 ```
-CO₂ = Total_Energy × Emission_Factor(0.82 kg CO₂/MWh for India)
+CO₂ (tonnes) = Total_Energy (MWh) × Emission_Factor
+            = Total_Energy × 0.82  (when Emission_Factor = 0.82 kg CO₂/kWh = 0.82 tCO₂/MWh)
 ```
 
 ---

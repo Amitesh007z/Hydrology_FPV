@@ -328,7 +328,7 @@ ECONOMIC ANALYSIS:
                 </div>
                 <div className="impact-card">
                   <h3>💧 Drinking Water</h3>
-                  <p>{(results.water_saved_liters / 100).toLocaleString(undefined, { maximumFractionDigits: 0 })} people/year</p>
+                  <p>{(results.water_saved_liters / (200 * 365)).toLocaleString(undefined, { maximumFractionDigits: 0 })} people/year</p>
                 </div>
               </div>
             </div>

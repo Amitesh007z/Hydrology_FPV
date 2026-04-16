@@ -20,7 +20,7 @@ def _run_scenario(area_km2, coverage, head_m, irradiance, evaporation,
     effective_area_m2 = area_m2 * coverage
 
     # FPV Capacity (MWp)
-    capacity_mwp = effective_area_m2 * efficiency / 1e6
+    capacity_mwp = effective_area_m2 * 1000 * efficiency / 1e6
 
     # Daily energy (MWh/day) — simplified (no temp correction for speed)
     daily_mwh = effective_area_m2 * irradiance * efficiency * pr / 1000
@@ -97,9 +97,9 @@ def optimize_scenario(area_km2, head_m, irradiance, evaporation,
     capex_cr_per_mwp : float
         CAPEX per MWp in ₹ Crores
     fpv_tariff : float
-        FPV energy tariff ₹/MWh
+        FPV energy tariff ₹/kWh
     hydro_tariff : float
-        Hydro energy tariff ₹/MWh
+        Hydro energy tariff ₹/kWh
     emission_factor : float
         Grid emission factor (kg CO₂/kWh)
     steps : int

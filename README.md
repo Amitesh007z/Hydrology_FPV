@@ -250,7 +250,7 @@ compute_total_co2_avoided(fpv_energy_mwh, hydro_energy_mwh, grid_emission_factor
 **Inputs:**
 - FPV energy (MWh/year)
 - Hydro energy (MWh/year)
-- Grid emission factor (kg CO₂/MWh) - **0.82 for India**
+- Grid emission factor (kg CO₂/kWh) - **0.82 for India** (equivalently **0.82 tCO₂/MWh**)
 
 **Output:** CO₂ avoided (tonnes)
 
@@ -286,8 +286,8 @@ CO₂ (tonnes) = Total_Energy (MWh) × Emission_Factor × 1000 / 1000
 - Wind Speed (0.5-5 m/s)
 
 **Economic Parameters:**
-- Grid Emission Factor (0.5-1.2 kg CO₂/MWh)
-- Hydro Tariff (₹2-6/MWh)
+- Grid Emission Factor (0.5-1.2 kg CO₂/kWh)
+- Hydro Tariff (₹2-6/kWh)
 
 ### 📈 Output Metrics
 

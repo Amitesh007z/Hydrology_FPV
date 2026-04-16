@@ -93,7 +93,7 @@ def compute_hydro_capacity_factor(annual_mwh, installed_capacity_mw):
     return min(cf, 1.0)
 
 
-def compute_revenue_from_hydro(energy_mwh, tariff_per_mwh=4.5):
+def compute_revenue_from_hydro(energy_mwh, tariff_inr_per_kwh=4.5):
     """
     Estimate revenue from additional hydro generation.
     
@@ -101,15 +101,16 @@ def compute_revenue_from_hydro(energy_mwh, tariff_per_mwh=4.5):
     -----------
     energy_mwh : float
         Energy in MWh
-    tariff_per_mwh : float
-        Average tariff in INR/MWh (4.5 INR typical)
+    tariff_inr_per_kwh : float
+        Average tariff in INR/kWh (4.5 INR typical)
     
     Returns:
     --------
     float
         Annual revenue in million INR
     """
-    revenue_inr = energy_mwh * tariff_per_mwh
+    # Convert MWh -> kWh for tariff in ₹/kWh
+    revenue_inr = energy_mwh * 1000 * tariff_inr_per_kwh
     revenue_million_inr = revenue_inr / 1e6
     
     return revenue_million_inr

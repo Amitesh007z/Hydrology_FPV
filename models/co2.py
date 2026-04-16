@@ -15,14 +15,15 @@ def compute_co2_avoided_fpv(energy_mwh, grid_emission_factor=0.82):
     energy_mwh : float
         FPV energy generation in MWh
     grid_emission_factor : float
-        Grid emission factor in kg CO2/MWh (0.82 typical for India)
+        Grid emission factor in kg CO2/kWh (0.82 typical for India).
+        Note: 0.82 kg/kWh is equivalent to 0.82 tCO2/MWh.
     
     Returns:
     --------
     dict
         Dictionary with 'tonnes' and 'kg'
     """
-    co2_kg = energy_mwh * 1000 * grid_emission_factor  # Convert MWh to kWh
+    co2_kg = energy_mwh * 1000 * grid_emission_factor  # MWh -> kWh
     co2_tonnes = co2_kg / 1000
     
     return {
@@ -40,7 +41,7 @@ def compute_co2_avoided_hydro(energy_mwh, grid_emission_factor=0.82):
     energy_mwh : float
         Hydro energy in MWh
     grid_emission_factor : float
-        Grid emission factor in kg CO2/MWh
+        Grid emission factor in kg CO2/kWh
     
     Returns:
     --------

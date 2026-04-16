@@ -93,9 +93,9 @@ def compute_fpv_capacity(area_km2, coverage, efficiency):
     effective_area = area_m2 * coverage
     
     # Standard Test Condition: 1000 W/m²
-    stc_irradiance = 1.0  # kW/m²
-    
-    capacity_mw = effective_area * stc_irradiance * efficiency / 1e6
+    stc_irradiance_w_m2 = 1000.0  # W/m²
+    # W = m² × (W/m²) × efficiency; convert W -> MW by / 1e6
+    capacity_mw = effective_area * stc_irradiance_w_m2 * efficiency / 1e6
     
     return capacity_mw
 

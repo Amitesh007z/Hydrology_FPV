@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { 
-  ArrowLeft, Zap, Droplet, Leaf, TrendingUp, Wind, Thermometer, 
+  ArrowLeft, Zap, Droplet, Leaf, TrendingUp, Thermometer, 
   AlertCircle 
 } from 'lucide-react';
 import '../styles/DamAnalysis.css';
@@ -169,13 +169,6 @@ const DamAnalysis = ({ damName, onBack }) => {
             <div>
               <p className="climate-label">Evaporation Rate</p>
               <p className="climate-value">{(damData.climate_summary?.evaporation || 0).toFixed(2)} mm/day</p>
-            </div>
-          </div>
-          <div className="climate-card">
-            <Wind size={24} color="#87CEEB" />
-            <div>
-              <p className="climate-label">Wind Speed</p>
-              <p className="climate-value">{(damData.climate_summary?.avg_wind_speed || 0).toFixed(1)} m/s</p>
             </div>
           </div>
         </div>

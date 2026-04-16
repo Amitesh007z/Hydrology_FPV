@@ -212,7 +212,7 @@ def compute_full_financial_analysis(fpv_capacity_mwp, annual_fpv_mwh,
     fpv_tariff : float
         FPV energy tariff ₹/kWh (converted internally)
     hydro_tariff : float
-        Hydro energy tariff ₹/MWh
+        Hydro energy tariff ₹/kWh (converted internally)
     discount_rate : float
         Discount rate
     lifetime_years : int
@@ -236,7 +236,7 @@ def compute_full_financial_analysis(fpv_capacity_mwp, annual_fpv_mwh,
     # Revenue streams
     # fpv_tariff is in ₹/kWh → convert to ₹/MWh (×1000), then to Crores (÷1e7)
     fpv_revenue_cr = (annual_fpv_mwh * fpv_tariff * 1000) / 1e7
-    # hydro_tariff is already in ₹/MWh
+    # hydro_tariff is in ₹/kWh → convert to ₹/MWh (×1000), then to Crores (÷1e7)
     hydro_revenue_cr = (extra_hydro_mwh * hydro_tariff * 1000) / 1e7
     carbon = compute_carbon_credit_value(co2_tonnes, carbon_credit_usd, usd_to_inr)
 

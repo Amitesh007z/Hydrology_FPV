@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ThermalMap from './ThermalMap';
+import { API_BASE, hasApiBase } from '../config/api';
 import '../styles/ThermalToggle.css';
-
-const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
 const ThermalToggle = () => {
   const [showThermal, setShowThermal] = useState(false);
@@ -20,6 +19,11 @@ const ThermalToggle = () => {
   }, [showThermal]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const fetchThermalData = async () => {
+    if (!hasApiBase) {
+      setError('API URL not configured. Set REACT_APP_API_URL in frontend environment variables.');
+      return;
+    }
+
     setLoading(true);
     setError(null);
     try {

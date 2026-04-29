@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet';
 import axios from 'axios';
 import ThermalOverlay from './ThermalOverlay';
+import { API_BASE, hasApiBase } from '../config/api';
 import '../styles/DamMap.css';
-
-const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
 const DamMap = ({ onSelectDam, selectedDam }) => {
   const [dams, setDams] = useState([]);
@@ -21,6 +20,11 @@ const DamMap = ({ onSelectDam, selectedDam }) => {
 
   const fetchDams = async () => {
     try {
+      if (!hasApiBase) {
+        setError('API URL not configured. Set REACT_APP_API_URL in frontend environment variables.');
+        setLoading(false);
+        return;
+      }
       setLoading(true);
       const response = await axios.get(`${API_BASE}/dams`);
       if (response.data.dams) {

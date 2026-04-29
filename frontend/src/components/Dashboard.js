@@ -7,9 +7,10 @@ import {
 import {
   Sun, Droplets, Zap, Leaf, TrendingUp, Download, RefreshCw
 } from 'lucide-react';
+import { API_BASE, hasApiBase } from '../config/api';
 import '../styles/Dashboard.css';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+const API_BASE_URL = API_BASE;
 
 const Dashboard = () => {
   // State management
@@ -39,6 +40,11 @@ const Dashboard = () => {
 
   // Load initial data
   useEffect(() => {
+    if (!hasApiBase) {
+      console.error('REACT_APP_API_URL is missing for production build.');
+      return;
+    }
+
     const fetchInitialData = async () => {
       try {
         const [reservoirRes, climateRes, avgRes] = await Promise.all([

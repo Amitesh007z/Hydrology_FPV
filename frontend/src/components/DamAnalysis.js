@@ -4,9 +4,8 @@ import {
   ArrowLeft, Zap, Droplet, Leaf, TrendingUp, Thermometer, 
   AlertCircle 
 } from 'lucide-react';
+import { API_BASE, hasApiBase } from '../config/api';
 import '../styles/DamAnalysis.css';
-
-const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
 const DamAnalysis = ({ damName, onBack }) => {
   const [damData, setDamData] = useState(null);
@@ -23,6 +22,11 @@ const DamAnalysis = ({ damName, onBack }) => {
 
   const fetchDamData = useCallback(async () => {
     try {
+      if (!hasApiBase) {
+        setError('API URL not configured. Set REACT_APP_API_URL in frontend environment variables.');
+        setLoading(false);
+        return;
+      }
       setLoading(true);
       const response = await axios.get(`${API_BASE}/dams/${damName}`);
       if (response.data.success) {

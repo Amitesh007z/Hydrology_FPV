@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 import '../styles/DamAnalysis.css';
 
-const API_BASE = 'http://localhost:8000';
+const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
 const DamAnalysis = ({ damName, onBack }) => {
   const [damData, setDamData] = useState(null);

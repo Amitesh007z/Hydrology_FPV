@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet';
 import axios from 'axios';
+import ThermalOverlay from './ThermalOverlay';
 import '../styles/DamMap.css';
 
-const API_BASE = 'http://localhost:8000';
+const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
 const DamMap = ({ onSelectDam, selectedDam }) => {
   const [dams, setDams] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [filterCapacity, setFilterCapacity] = useState('all');
+  const [showThermal, setShowThermal] = useState(true); // DEFAULT ON
+  const [thermalData, setThermalData] = useState(null);
+  const [thermalLoading, setThermalLoading] = useState(false);
 
   useEffect(() => {
     fetchDams();
@@ -28,6 +32,25 @@ const DamMap = ({ onSelectDam, selectedDam }) => {
       console.error('Error fetching dams:', err);
     } finally {
       setLoading(false);
+    }
+  };
+
+  // Fetch thermal data when toggle is enabled
+  useEffect(() => {
+    if (showThermal && !thermalData) {
+      fetchThermalData();
+    }
+  }, [showThermal]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const fetchThermalData = async () => {
+    setThermalLoading(true);
+    try {
+      const response = await axios.get(`${API_BASE}/thermal/data`);
+      setThermalData(response.data);
+    } catch (err) {
+      console.error('Error fetching thermal data:', err);
+    } finally {
+      setThermalLoading(false);
     }
   };
 
@@ -83,6 +106,17 @@ const DamMap = ({ onSelectDam, selectedDam }) => {
           </select>
         </div>
 
+        <div className="thermal-toggle-btn-wrapper">
+          <button 
+            className={`thermal-btn ${showThermal ? 'active' : ''}`}
+            onClick={() => setShowThermal(!showThermal)}
+            disabled={thermalLoading}
+          >
+            <span className="thermal-icon">🌡️</span>
+            {thermalLoading ? 'Loading...' : showThermal ? 'Hide Thermal Map' : 'Show Thermal Map'}
+          </button>
+        </div>
+
         <div className="legend">
           <div className="legend-item">
             <div className="legend-color" style={{ backgroundColor: '#FF4444' }}></div>
@@ -107,6 +141,8 @@ const DamMap = ({ onSelectDam, selectedDam }) => {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; OpenStreetMap contributors'
           />
+          
+          <ThermalOverlay thermalData={thermalData} opacity={0.5} enabled={showThermal} />
           
           {filteredDams.map((dam) => (
             <CircleMarker

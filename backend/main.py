@@ -9,6 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional, Dict, List
 import sys
+import os
 from pathlib import Path
 
 # Add project to path
@@ -29,6 +30,7 @@ from utils import (
     load_reservoir_data, get_monthly_climate_data, compute_annual_averages,
     discover_reservoirs, load_real_reservoir, load_real_climate
 )
+from thermal_data import get_thermal_grid_data, get_thermal_legend
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -37,10 +39,30 @@ app = FastAPI(
     version="2.0.0"
 )
 
-# Enable CORS for React frontend
+# Production-ready CORS configuration
+ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://localhost:3003",
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1:3003",
+]
+
+# Add production frontend URLs from environment
+if os.getenv("FRONTEND_URL"):
+    ALLOWED_ORIGINS.append(os.getenv("FRONTEND_URL"))
+
+# Allow all vercel deployments in development, restrict in production
+if os.getenv("ENV", "development") == "development":
+    ALLOWED_ORIGINS.append("https://vercel.app")  # All Vercel apps
+    ALLOWED_ORIGINS.append("*")  # Allow all
+else:
+    # Production: only allow specific domains
+    if os.getenv("PRODUCTION_FRONTEND_URL"):
+        ALLOWED_ORIGINS.append(os.getenv("PRODUCTION_FRONTEND_URL"))
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -717,6 +739,41 @@ def get_generation_comparison(dam_name: str, fpv_coverage: float = 10):
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error: {str(e)}")
+
+
+# ============================================================================
+# THERMAL DATA ENDPOINTS (NASA Real-Time)
+# ============================================================================
+
+@app.get("/thermal/data", tags=["Thermal"])
+def get_thermal_data():
+    """
+    Get real thermal (surface temperature) data for India
+    Uses NASA POWER API data
+    Returns grid of temperature points for heatmap visualization
+    """
+    try:
+        thermal_data = get_thermal_grid_data()
+        return thermal_data
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error fetching thermal data: {str(e)}")
+
+
+@app.get("/thermal/legend", tags=["Thermal"])
+def get_thermal_map_legend():
+    """
+    Get color legend for thermal map visualization
+    Maps temperature ranges to colors
+    """
+    try:
+        legend = get_thermal_legend()
+        return {
+            "legend": legend,
+            "unit": "Celsius",
+            "source": "NASA POWER API"
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error fetching legend: {str(e)}")
 
 
 # ============================================================================
